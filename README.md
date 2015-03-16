@@ -96,3 +96,10 @@ git push origin master
 #ワイルドカード
 *.log
 ```
+
+## Pullして最新状態を取得する
+```
+git pull origin master
+```
+
+## コンフリクトを解消する
