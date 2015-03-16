@@ -32,3 +32,53 @@ git commit
 ```
 git status
 ```
+
+ファイルをステージングエリアに移動するには
+```
+git add filepattern
+```
+
+filepatternにはファイル名やディレクトリ名が入る  
+(例)
+
+* css/ （cssディレクトリ内のファイル）  
+* *.js （jsファイル全て）
+
+ステージングエリアにファイルを移動してから
+```
+git status
+```
+を実行すると以下のように表示される
+
+```
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   README.md
+```
+
+## コミット
+以下を実行
+```
+git commit -m "メッセージを入力"
+```
+
+コミットが成功したら、以下を実行して履歴を確認してみる
+```
+git log
+```
+
+## PushしてGithubに反映する
+変更した内容をGithubリポジトリに反映させるにはgit pushを実行する
+```
+git push <リモート名> <ブランチ名>
+```
+
+pushする際はリモート名・ブランチ名を指定する
+通常clone元はorigin、デフォルトのブランチははmaster
+```
+git push origin master
+```
