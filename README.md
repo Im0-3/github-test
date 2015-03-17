@@ -118,3 +118,7 @@ Milestoneは全体の作業の大まかな区切り
 ```
 git checkout -b branchName
 ```
+
+```
+git push origin branchName
+```
