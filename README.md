@@ -115,10 +115,54 @@ Milestoneは全体の作業の大まかな区切り
 ## Pull Requestとは？
 リポジトリのソースコードの修正などを気軽に送って取り入れてもらう機能  
 
+### コマンドラインでブランンチを作る
+ブランチを作る際はgit checkoutコマンドに-bをつける  
+新しいいブランチを作った上で、ブランチをcheckoutしてくれる
 ```
 git checkout -b branchName
 ```
 
+新たに作成したブランチをリポジトリにpushする
 ```
+git add fileName
+git commit -m "comment"
 git push origin branchName
 ```
+
+### ブラウザでPull Requestする
+プルリクエストを送るにはGithub上で行う
+
+## GitFlow
+Vincent Driessen氏が2010年に提唱したフロー  
+(A successful Git branching model を翻訳しました)[http://keijinsonyaban.blogspot.jp/2010/10/successful-git-branching-model.html]
+
+* developブランチ
+* featureブランチ
+* releaseブランチ
+* masterブランチ
+* hotfixブランチ
+
+### developブランチ・featureブランチ  
+開発はdevelopとfeatureの各ブランチで行う  
+developブランチは開発する際のメインブランチ  
+基本的にdevelopブランチへ直接コミットをpushすることはしない。  
+featureブランチを作って、ここからdevelopブランチへpull requestを送る  
+
+普段の開発ではこの繰り返しで進めていく
+
+同じFeatureブランチに修正をpushするだけで修正済みのコードが新しいPull Requestとして使用されるようになる。
+
+### masterブランチ・releaseブランチ
+リリースの際はreleaseブランチに分岐をする。  
+releaseブランチでは、リリースに向けての準備をする。  
+例えばREADMEファイルの修正・バグフィックスを行うなど
+
+リリースした後は、releaseブランチからmasterブランチへマージしてリリースのバージョンのバージョンタグをつける  
+またreleaseブランチからdevelopブランチにも同様にマージする  
+
+masterブランチは基本的にこのリリース作業の時のみしか更新されない
+
+## hotfixブランチ
+リリース後、緊急度の高い修正はhotfixブランチで作業する  
+masterブランチをhotfixブランチにマージして、hotfixブランチで作業する  
+作業が完了したら、masterブランチとdevelopブランチへマージする
