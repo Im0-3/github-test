@@ -109,4 +109,12 @@ git pull origin master
 
 ## Milestoneとissue
 Milestoneは全体の作業の大まかな区切り  
-その中にissue
+その中にissueを立てて作業を行う
+
+
+## Pull Requestとは？
+リポジトリのソースコードの修正などを気軽に送って取り入れてもらう機能  
+
+```
+git checkout -b branchName
+```
