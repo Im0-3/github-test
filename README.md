@@ -115,6 +115,26 @@ Milestoneは全体の作業の大まかな区切り
 ## Pull Requestとは？
 リポジトリのソースコードの修正などを気軽に送って取り入れてもらう機能  
 
+### コマンドラインでブランンチを作る
+ブランチを作る際はgit checkoutコマンドに-bをつける  
+新しいいブランチを作った上で、ブランチをcheckoutしてくれる
 ```
 git checkout -b branchName
 ```
+
+新たに作成したブランチをリポジトリにpushする
+```
+git add fileName
+git commit -m "comment"
+git push origin branchName
+```
+
+### ブラウザでPull Requestする
+プルリクエストを送るにはGithub上で行う
+
+## GitFlow
+Vincent Driessen氏が2010年に提唱したフロー  
+(A successful Git branching model を翻訳しました)[http://keijinsonyaban.blogspot.jp/2010/10/successful-git-branching-model.html]
+
+* developブランチ
+* featureブランチ
