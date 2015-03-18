@@ -142,6 +142,7 @@ Vincent Driessen氏が2010年に提唱したフロー
 * masterブランチ
 * hotfixブランチ
 
+
 ### developブランチ・featureブランチ  
 開発はdevelopとfeatureの各ブランチで行う  
 developブランチは開発する際のメインブランチ  
